@@ -71,7 +71,7 @@ print('Done!')
 
 print('Making conf file...')
 mmap_config = dict()
-mmap_config['num_nodes'] = dataset[0].num_nodes
+mmap_config['num_nodes'] = int(dataset[0].num_nodes)
 mmap_config['indptr_shape'] = tuple(indptr.shape)
 mmap_config['indptr_dtype'] = str(indptr.dtype)
 mmap_config['indices_shape'] = tuple(indices.shape)
@@ -84,7 +84,7 @@ mmap_config['features_shape'] = tuple(features_mmap.shape)
 mmap_config['features_dtype'] = str(features_mmap.dtype)
 mmap_config['labels_shape'] = tuple(labels_mmap.shape)
 mmap_config['labels_dtype'] = str(labels_mmap.dtype)
-mmap_config['num_classes'] = dataset.num_classes
+mmap_config['num_classes'] = int(dataset.num_classes)
 json.dump(mmap_config, open(conf_path, 'w'))
 print('Done!')
 
