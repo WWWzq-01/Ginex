@@ -14,7 +14,8 @@ args = argparser.parse_args()
 
 # Download/load dataset
 print('Loading dataset...')
-root = './dataset'
+# root = './dataset'
+root = '/data1/datasets'
 os.makedirs(root, exist_ok=True)
 dataset = PygNodePropPredDataset(args.dataset, root)
 dataset_path = os.path.join(root, args.dataset + '-ginex')
