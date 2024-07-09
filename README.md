@@ -69,11 +69,11 @@ Follow the instructions below to install the requirements and run a toy example 
     ```console
     python3 get_pythonpath.py
     ```
-5. Run baseline, i.e., PyG extended to support disk-based processing of graph dataset (denoted as PyG+ in the paper). Replace `PYTHONPATH=...` with the outcome of step 3. `-W ignore` option is used to ignore warnings.
+5. Run baseline, i.e., PyG extended to support disk-based processing of graph dataset (denoted as PyG+ in the paper). Replace `PYTHONPATH=...` with the outcome of step 4. `-W ignore` option is used to ignore warnings.
     ```console
     sudo PYTHONPATH=/home/user/.local/lib/python3.8/site-packages cgexec -g memory:8gb python3 -W ignore run_baseline.py
     ```
-6. Run Ginex. Replace `PYTHONPATH=...` with the outcome of step 3. `-W ignore` option is used to ignore warnings.
+6. Run Ginex. Replace `PYTHONPATH=...` with the outcome of step 4. `-W ignore` option is used to ignore warnings.
     ```console
     sudo PYTHONPATH=/home/user/.local/lib/python3.8/site-packages cgexec -g memory:8gb python3 -W ignore run_ginex.py --neigh-cache-size 6000000000 --feature-cache-size 6000000000 --sb-size 1500
     ```
