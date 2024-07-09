@@ -19,8 +19,10 @@ from lib.neighbor_sampler import GinexNeighborSampler
 # Parse arguments
 argparser = argparse.ArgumentParser()
 argparser.add_argument('--gpu', type=int, default=0)
-argparser.add_argument('--num-epochs', type=int, default=10)
-argparser.add_argument('--batch-size', type=int, default=1000)
+# argparser.add_argument('--num-epochs', type=int, default=10)
+argparser.add_argument('--num-epochs', type=int, default=1)
+# argparser.add_argument('--batch-size', type=int, default=1000)
+argparser.add_argument('--batch-size', type=int, default=1024)
 argparser.add_argument('--num-workers', type=int, default=os.cpu_count()*2)
 argparser.add_argument('--num-hiddens', type=int, default=256)
 argparser.add_argument('--dataset', type=str, default='ogbn-papers100M')
@@ -37,7 +39,8 @@ args = argparser.parse_args()
 
 # Set args/environment variables/path
 os.environ['GINEX_NUM_THREADS'] = str(args.ginex_num_threads)
-dataset_path = os.path.join('./dataset', args.dataset + '-ginex')
+# dataset_path = os.path.join('./dataset', args.dataset + '-ginex')
+dataset_path = os.path.join('/data1/datasets', args.dataset + '-ginex')
 split_idx_path = os.path.join(dataset_path, 'split_idx.pth')
 
 # Prepare dataset

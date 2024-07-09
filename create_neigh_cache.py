@@ -14,7 +14,8 @@ args = argparser.parse_args()
 
 # Set environment and path
 os.environ['GINEX_NUM_THREADS'] = str(args.ginex_num_threads)
-dataset_path = os.path.join('./dataset', args.dataset + '-ginex')
+# dataset_path = os.path.join('./dataset', args.dataset + '-ginex')
+dataset_path = os.path.join('/data1/datasets', args.dataset + '-ginex')
 score_path = os.path.join(dataset_path, 'nc_score.pth')
 split_idx_path = os.path.join(dataset_path, 'split_idx.pth')
 
